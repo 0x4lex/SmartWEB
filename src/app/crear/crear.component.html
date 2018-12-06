@@ -1,0 +1,72 @@
+<div class="card card-body bg-light">
+  <a routerLink="/lugares">Lugares</a> / Crear Lugar
+</div>
+
+<div class="container">
+  <div class="e-form">
+    <div class="form-group">
+      <label for="Nombre">Nombre</label>
+      <input type="text" class="form-control" [(ngModel)]="lugar.nombre">
+    </div>
+    <div class="form-group">
+      <label for="Distancia">Distancia</label>
+      <input type="number" class="form-control" [(ngModel)]="lugar.distancia">
+    </div>
+    <div class="form-group">
+      <label for="Cercania">Cercania</label>
+      <input type="number" class="form-control" [(ngModel)]="lugar.cercania">
+    </div>
+    <div class="form-group">
+      <label for="Mensaje">Descripcion</label>
+      <textarea class="form-control" [(ngModel)]="lugar.descripcion"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="Plan">Plan</label>
+      <input type="text" class="form-control" [(ngModel)]="lugar.plan">
+    </div>
+
+
+    <div class="form-group">
+      <label for="Plan">Latitud</label>
+      <input type="text" class="form-control" [(ngModel)]="lugar.lat">
+    </div>
+    <div class="form-group">
+      <label for="Plan">Longuitud</label>
+      <input type="text" class="form-control" [(ngModel)]="lugar.lng">
+    </div>
+    <!--<h3>Datos de direccion</h3>
+    <div class="form-group">
+      <div class="card card-body bg-light">
+        <label>Buscar dirección en Google Maps</label>
+        <input type="text" class="form-control" [formControl]="searchField">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let result of results | async" (click)="seleccionarDireccion(result)">
+            {{result.formatted_address}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    -->
+      <h1>Datos y dirección</h1>
+    <div class=" form-group ">
+      <label for="PlCalle y Numeroan ">Calle y Numero</label>
+      <input type="text " class="form-control " [(ngModel)]="lugar.calle ">
+    </div>
+
+    <div class="form-group ">
+      <label for="Ciudad ">Ciudad</label>
+      <input type="text " class="form-control " [(ngModel)]="lugar.ciudad ">
+    </div>
+
+    <div class="form-group ">
+      <label for="Pais ">Pais</label>
+      <input type="text " class="form-control " [(ngModel)]="lugar.pais ">
+    </div>
+
+    <hr>
+    <a class="btn btn-primary " href="# " (click)="!!guardarLugar() ">Enviar</a>
+    <a class="btn btn-default " routerLink="/lugares ">Cancelar</a>
+  </div>
+
+</div>

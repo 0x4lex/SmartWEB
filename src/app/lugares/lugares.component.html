@@ -1,0 +1,45 @@
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
+</agm-map>
+
+<!-- <div id="cuadrado" [@contenedorAnimable]="state" (@contenedorAnimable.start)="animacionInicial($event)" (@contenedorAnimable.done)="animacionTermina($event)">
+
+</div>
+
+<button class="btn btn-default" (click)="animar()">Animar!</button> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Lugares cercanos</h2>
+      <a class="btn btn-primary" routerLink="/crear/new">Crear nuevo indicio</a>
+      <ul class="list-group">
+        <ng-container *ngFor="let lugar of lugares">
+          <li class="list-group-item">
+            <a routerLink="/crear/{{lugar.id}}">
+              <h3>{{lugar.nombre | titlecase}}
+                <span class="fa fa-star pull-right" *ngIf="(lugar.plan | uppercase)===('PAGADO')"></span>
+              </h3>
+            </a>
+            <br>
+            <small>Creado {{lugar.id | date:'dd/MM/yyyy HH:mm:ss' | uppercase}}</small>
+            <p [innerHtml]="lugar.descripcion | linkifystr"></p>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+    <div class="col-md-4" [@contenedorAnimable]="state">
+      <h2>Destacados</h2>
+      <ng-container *ngFor="let lugar of lugares">
+        <div class="bg-warning text-white padding" *ngIf="lugar.plan == 'pagado'">
+          <a routerLink="/crear/{{lugar.id}}">
+            <h3>{{lugar.nombre | titlecase}}
+              <span class="fa fa-star pull-right" *ngIf="(lugar.plan | uppercase)===('PAGADO')"></span>
+            </h3>
+          </a>
+          <p [innerHtml]="lugar.descripcion | linkifystr"></p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
